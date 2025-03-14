@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>4</title>
+        <style>
+            .battery {
+                width: 150px;
+                height: 50px;
+                border: 2px solid #000;
+                margin: 20px auto;
+                position: relative;
+            }
+
+            .battery::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                right: -10px;
+                width: 6px;
+                height: 20px;
+                background: #000;
+                transform: translateY(-50%);
+            }
+
+            .battery::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                background: #000;
+            }
+
+            .battery.low::before {
+                width: 20%;
+                background: red;
+            }
+
+            .battery.medium::before {
+                width: 50%;
+                background: yellow;
+            }
+
+            .battery.full::before {
+                width: 100%;
+                background: green;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="battery low"></div>
+        <div class="battery medium"></div>
+        <div class="battery full"></div>
+    </body>
+</html>
